@@ -1,0 +1,63 @@
+hyprcursor (0.1.13-2parrot1) echo; urgency=medium
+
+  * import debian-backports version
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Tue, 24 Nov 2026 03:50:52 +0100
+
+hyprcursor (0.1.13-2~bpo13+1) trixie-backports; urgency=medium
+
+  * Rebuild for trixie-backports.
+
+ -- Alex Myczko <tar@debian.org>  Fri, 29 May 2026 19:08:13 +0000
+
+hyprcursor (0.1.13-2) unstable; urgency=medium
+
+  [ Carl Keinath ]
+  * d/control: bump S-V to 4.7.4
+  * append Uploaders
+  * apply Multi-Arch: same to libhyprcursor0
+
+  [ Chow Loong Jin ]
+  * Apply Multi-Arch: same to libhyprcursor-dev
+
+ -- Chow Loong Jin <hyperair@debian.org>  Thu, 30 Apr 2026 12:06:05 +0800
+
+hyprcursor (0.1.13-1) unstable; urgency=medium
+
+  * Salvage and move to team maintenance (Closes: #1130340)
+  * rename package from libhyprcursor to hyprcursor
+  * enable autopkgtests
+  * update copyright
+  * d/control: bump S-V to 4.7.3, remove RRR and Priority
+  * d/rules: disable DH_VERBOSE = 1
+
+ -- Carl Keinath <carl.keinath@gmail.com>  Fri, 03 Apr 2026 12:44:53 +0800
+
+libhyprcursor (0.1.13-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload
+  * New upstream release (Closes: #1106525, #1117188)
+  * Updated to watchfile version 5
+
+ -- Carl Keinath <carl.keinath@gmail.com>  Mon, 06 Oct 2025 11:59:22 +0200
+
+libhyprcursor (0.1.12-1) unstable; urgency=medium
+
+  [ alan (NyxTrail) ]
+  * New upstream version 0.1.12
+  * Update standards version to 4.7.2
+  * Add d/gbp.conf for recommended repo layout
+
+ -- Alan M Varghese (NyxTrail) <alan@digistorm.in>  Sun, 04 May 2025 12:05:37 +0000
+
+libhyprcursor (0.1.11-1) unstable; urgency=medium
+
+  * New upstream version 0.1.11
+
+ -- Alan M Varghese (NyxTrail) <alan@digistorm.in>  Sun, 02 Mar 2025 08:05:54 +0000
+
+libhyprcursor (0.1.9-1) unstable; urgency=low
+
+  * Initial release. Closes: #1067116
+
+ -- Alan M Varghese (NyxTrail) <alan@digistorm.in>  Mon, 18 Mar 2024 16:41:48 +0000

@@ -1,0 +1,4 @@
+name = test
+description = test theme
+version = 0.1
+cursors_directory = hyprcursors

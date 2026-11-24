@@ -1,0 +1,3 @@
+usr/include
+usr/lib/*/libhyprcursor.so
+usr/lib/*/pkgconfig

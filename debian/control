@@ -1,0 +1,54 @@
+Source: hyprcursor
+Section: x11
+Maintainer: Debian Hyprland Maintainers <team+hyprland@tracker.debian.org>
+Uploaders:
+ Alan M Varghese (NyxTrail) <alan@digistorm.in>,
+ Carl Keinath <carl.keinath@gmail.com>,
+ Chow Loong Jin <hyperair@debian.org>,
+ Alex Myczko <tar@debian.org>,
+Build-Depends: cmake,
+  debhelper-compat (= 13),
+  libcairo2-dev,
+  libhyprlang-dev (>= 0.4.2),
+  librsvg2-dev,
+  libtomlplusplus-dev,
+  libzip-dev,
+  pkgconf,
+Standards-Version: 4.7.4
+Homepage: https://github.com/hyprwm/hyprcursor
+Vcs-Git: https://salsa.debian.org/hyprland-team/hyprcursor.git
+Vcs-Browser: https://salsa.debian.org/hyprland-team/hyprcursor
+
+Package: hyprcursor-util
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Utility to manipulate hyprcusor and xcursor themes
+ hyprcursor is the cursor format, and associated files and utilities
+ for Hyprland.
+ .
+ This package contains hyprcursor-util; a binary to compile, pack,
+ unpack etc the hyprcursor and xcursor themes.
+
+Package: libhyprcursor0
+Section: libs
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: hyprland cursor format, library and utilities
+ hyprcursor is the cursor format, and associated files and utilities
+ for Hyprland.
+ .
+ This package contains hyprcursor; a cursor format, library and
+ utilities for Hyprland.
+
+Package: libhyprcursor-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends},
+         libhyprcursor0 (= ${binary:Version})
+Description: hyprland cursor format, library and utilities (headers)
+ hyprcursor is the cursor format, and associated files and utilities
+ for Hyprland.
+ .
+ This package contains the header files for hyprcursor.

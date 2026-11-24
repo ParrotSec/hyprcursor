@@ -1,0 +1,119 @@
+.TH HYPRCURSOR-UTIL 1 "hyprcursor-util" "hyprcursor-util" "User Commands"
+
+.SH NAME
+hyprcursor-util \- compile, pack, and extract hyprcursor and xcursor themes
+
+.SH SYNOPSIS
+.B hyprcursor-util
+.RI [ options ] " command " [ path ]
+
+.SH DESCRIPTION
+.B hyprcursor-util
+is a utility for compiling, packing, unpacking, and converting cursor themes
+between hyprcursor, xcursor, and a working-state representation.
+
+The working state is an easy-to-navigate format where each cursor is stored as
+a PNG or SVG and metadata is stored in files.
+
+.SH RUNTIME DEPENDENCIES
+.B hyprcursor-util
+uses
+.B xcur2png
+at runtime.
+
+.SH THEME STATES
+Themes may exist in the following states:
+
+.TP
+.B compiled hyprcursor
+Usable by applications and compositors supporting hyprcursor.
+
+.TP
+.B compiled xcursor
+Usable by xcursor-based software.
+
+.TP
+.B working state
+Editable form where each cursor is a PNG or SVG and metadata is stored in files.
+
+.SH COMMANDS
+.TP
+.BI "--create " path
+.TQ
+.BI "-c " path
+Create a compiled hyprcursor theme from a working-state directory.
+
+.TP
+.BI "--extract " path
+.TQ
+.BI "-x " path
+Extract an xcursor theme into a working-state directory.
+
+.SH OPTIONS
+.TP
+.BI "--output " directory
+.TQ
+.BI "-o " directory
+Specify the output directory.
+
+For safety reasons, do not use this option with versions below 0.1.1, as those
+versions remove the specified directory without confirmation.
+
+Since version 0.1.2, the specified output directory is treated as the parent
+directory, and the result is written to a subdirectory named:
+
+.PP
+.RS
+.I $ACTION_$NAME
+.RE
+
+.TP
+.BI "--resize " mode
+For
+.B --extract
+only, specify the default resize algorithm for shapes.
+
+The default is
+.BR none .
+
+.SH EXAMPLES
+Create a compiled hyprcursor theme from a working-state directory:
+.PP
+.nf
+hyprcursor-util --create ./theme-workdir
+.fi
+
+.PP
+Create a compiled hyprcursor theme and place the result under a chosen parent
+directory:
+.PP
+.nf
+hyprcursor-util --create ./theme-workdir --output ./out
+.fi
+
+.PP
+Extract an xcursor theme into a working-state directory:
+.PP
+.nf
+hyprcursor-util --extract ./xcursor-theme
+.fi
+
+.PP
+Extract using a resize mode:
+.PP
+.nf
+hyprcursor-util --extract ./xcursor-theme --resize none
+.fi
+
+.SH NOTES
+The
+.B --output
+behavior changed in version 0.1.2. In that and later versions, the named
+directory is treated as a parent directory rather than the final destination.
+
+.SH SEE ALSO
+.BR xcur2png (1)
+
+.SH AUTHORS
+Hypr Development
+

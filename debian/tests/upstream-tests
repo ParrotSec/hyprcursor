@@ -1,0 +1,24 @@
+#!/bin/sh
+
+set -eu
+
+mkdir -p "$AUTOPKGTEST_TMP"
+cp -r tests "$AUTOPKGTEST_TMP"/tests
+cp debian/tests/CMakeLists.txt "$AUTOPKGTEST_TMP"/CMakeLists.txt
+cp -r debian/tests/test-theme "$AUTOPKGTEST_TMP"/test-theme
+
+mkdir -p "$AUTOPKGTEST_TMP/theme-build"
+# compile .hlc
+hyprcursor-util --create "$AUTOPKGTEST_TMP/test-theme" --output "$AUTOPKGTEST_TMP/theme-build"
+
+export HOME="$AUTOPKGTEST_TMP/home"
+mkdir -p "$HOME/.icons"
+
+cp -a "$AUTOPKGTEST_TMP/theme-build/theme_test" "$HOME/.icons/"
+
+mkdir -p "$AUTOPKGTEST_TMP"/build
+cd "$AUTOPKGTEST_TMP"/build
+
+cmake ..
+cmake --build .
+ctest --output-on-failure

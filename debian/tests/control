@@ -1,0 +1,6 @@
+Tests: upstream-tests
+Depends: @,
+         cmake,
+         g++,
+         pkgconf,
+         libcairo2-dev,
